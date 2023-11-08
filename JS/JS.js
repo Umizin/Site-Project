@@ -1,7 +1,6 @@
 const containerDeLinks = document.getElementById("containerDeLinks")
 
 const urls = [
-    "https://www.xvideos.com/",
     "https://discord.gg/SmzHxAdj",
     "https://www.google.com/intl/pt-BR/gmail/about/"
 
