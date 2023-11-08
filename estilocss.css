@@ -2,63 +2,147 @@
 
 @font-face {
     font-family: 'MorandiRegular';
-    src: url('Morandi\ Regular.otf') format('opentype')
+    src: url('Morandi\Regular.otf') format('opentype')
+}
+
+body {
+    background-color: #232024;
+    margin: 0px;
+}
+
+.espaço-Grid{
+    margin-left: 6.25vw;
+    margin-right: 6.25vw;
+    padding-right: 0.75vw;
+    padding-left: 0.75vw;
+
+}
+
+.site-Content{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.grid-Do-Site{
+    margin-left: 7.813vw; 
+    margin-right: 7.813vw; 
+    padding-left: 0.75vw; 
+    padding-right: 0.75vw;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gridConteudodoSite{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, max-content));
+    grid-template-rows: auto;
+    grid-gap: 15px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "Intro Intro Intro Links"
+    "News News News Calend"
+    "News News News ."
+    "SliderBanner SliderBanner SliderBanner ."
+    "SliderBanner SliderBanner SliderBanner .";
+    max-height: 100%;
+    max-width: 100%;
+
+    @media screen and (max-width: 576px) {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-areas:
+            "Intro"
+            "Links"
+            "News"
+            "Calend"
+            "SliderBanner";
+        
+        
+        .retLinks{
+            width: 100%;
+        }
+        .retText{
+            width: 120%;
+            height: 30vh;
+        }
+        .textinhos{
+            font-size: 2.5vw;
+        }
+        .w-100{
+            font-size: 3vw;
+        }
+        .h-100{
+            font-size:3vh;
+        }
+    }
+}
+
+.menuCalend{
+    grid-area: Calend;
+    background-color:#2d282f;
+    height: 97vh;
+}
+.menuNews{
+    grid-area: News;
+    background-color:#2d282f;
+    height: 100vh;
 }
 
 .retLinks{
-    display:flex;
-    width: 16vw;
-    height: 340px;
+    grid-area: Links;
     background-color:#2d282f;
-    position: absolute;
-    border-radius: 10px;
-    right: 310px;
-    top: 80px;
+    height: 30vh;
 }
 
 .retText{
-    display:flex;
-    width: 860px;
-    height: 340px;
+    grid-area: Intro;
     background-color:#2d282f;
-    position: absolute;
-    top: 80px;
-    left: 278px;
-    border-radius: 10px;
+    height: 30vh;
 }    
+
+.menuBanners{
+    grid-area: SliderBanner;
+    background-color:#2d282f;
+    height: 80vh;
+}
+
+.colunaNews{
+    display: flex!important;
+    flex-direction: column!important;
+}
 
 .menuHeader{
     display:flex;
     width: 100%;
-    height: 50px;
+    height: 5.4vh;
     background-color:#2d282f;
     padding: 0px;
     margin: 0px;
     border: 0px;
     justify-content: center;
     align-items: center;
+    flex-direction: column
     
 }
 title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-body {
-    background-color: #232024;
-}
+
 
 h1 {
+    font-family: 'MorandiRegular', sans-serif;
+    font-size: 44.5px;
+    font-weight: lighter;
+}
+
+h3 {
     color:#ffffff;
     font-family: 'MorandiRegular', sans-serif;
-    height: 150%;
-    font-size: 35px;
-    padding: 0px;
-    text-decoration: underline;
-    text-decoration-skip-ink: auto;
-    text-underline-offset: 17px;
-    text-decoration-color: #dab2f9;
-    position: absolute;
-    left: 25px;
-    margin-right: 10px;
+    font-size: 1.55vw;
+    text-transform: none;
+    font-weight: lighter;
+    letter-spacing: -1px;
 }
 
 .iconepequenomenu{
@@ -70,10 +154,89 @@ h1 {
     left: 275px;
 }
 
-.spanClass{
+
+.textinhos{
     font-family: 'MorandiRegular', sans-serif;
     color: #ffffff;
-    position: absolute;
-    top: 140px;
-    left: 25px;
+    font-weight: lighter;
+    font-size:20px;
+}
+
+.textosdelinks{
+    display: inline-block;
+    vertical-align: middle;
+    cursor:pointer;
+    border: 2px solid transparent;
+    background-color: #423745;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.w-100{
+    width:inherit;
+}
+
+.h-100{
+    height: inherit;
+}
+
+.py-4{
+    padding-top: 2.65vh;
+    padding-bottom: 2.67vh;
+}
+
+body.home h1, body.home h2, body.home h3, body.home h4{
+    color: #FFF;
+    display: table;
+    border-bottom: 4px solid #dab2f9;
+    font-family: 'MorandiRegular', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+body.home .gridConteudodoSite>div{
+    border-radius: 15px;
+    padding: 25px;
+}
+
+body.home .cartasNovas{
+    background: #423745;
+    color: #FFF;
+    margin-top: 1.5rem!important;
+    border-radius: 15px;
+    height: 20vh;
+}
+
+body.home .imagemCartasNovas{
+    border-radius: 15px;
+    display: flex;
+    max-width: 90%;
+    max-height: 100%;
+}
+
+body.home .imagemTextoCartas{
+    display: flex!important;
+    flex-direction: column!important;
+    text-align: left;
+    padding: 5px;
+}
+
+.container{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.p-2d-flex{
+    padding: 0.5rem;
+    display: flex;
+    width: 45%;
+}
+
+h5 {
+    font-size: 1.55vw;
+    margin-top:1rem;
+    color: #FFF;
+    margin-bottom: 0px;
+    font-family: 'MorandiRegular', sans-serif;
 }
