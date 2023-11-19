@@ -5,10 +5,85 @@
     src: url('Morandi\Regular.otf') format('opentype')
 }
 
+
 body {
     background-color: #232024;
     margin: 0px;
+
+@media screen and (max-width: 576px) {
+    .gridConteudodoSite{
+        max-width: 100%;
+        max-height: 100%;
+        grid-template-columns: 0.8fr; /* Uma coluna em telas menores */
+        grid-template-areas:
+            "Intro"
+            "Links"
+            "News"
+            "Calend"
+            "SliderBanner";
+    }    
+    .retText{
+        width: 100%;
+        height: 20vh;
+        max-height: 100%;
+    }
+    .retLinks{
+        width: 100% !important;
+    }
+    .w-100{
+        font-size: 3vw;
+    }
+    .h-100{
+        font-size: 4vw;
+    }
+    .textinhos{
+        font-size: 2.8vw;
+    }
+    .grid-Do-Site{
+        margin: 0%;
+        padding: 0%;
+    }
+    .espaço-Grid{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .menuNews{
+        width: 100%;
+        height: 93%;
+    }
+    .menuBanners{
+        width: 100%;
+    }
+    .menuCalend{
+        width: 100% !important;
+    }
+    
+    .cartasNovas{
+        height: 18vh !important;
+        max-width: 80%;
+    }
+    .UPD{
+        margin-top: 48% !important;
+        margin-left: 30% !important;
+        
+    }
+    .UPDNEW{
+        margin-top: 48% !important;
+        margin-left: 30% !important;
+    }
+    .textoLinks{
+        width: 60vw;
+        align-items: center;
+    }
+    .colunaLinks{
+        align-items: center;
+    }
+   .fonte576px {
+        font-size:1.5vh;
+    }
+    }
 }
+
 
 .espaço-Grid{
     margin-left: 6.25vw;
@@ -31,13 +106,15 @@ body {
     padding-right: 0.75vw;
     justify-content: center;
     align-items: center;
+
 }
 
 
 .gridConteudodoSite{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, max-content));
+    grid-template-columns: 1fr 1fr 1fr 1.11fr;
     grid-template-rows: auto;
+    height: 100%;
     grid-gap: 15px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -49,56 +126,106 @@ body {
     max-height: 100%;
     max-width: 100%;
 
-    @media screen and (max-width: 576px) {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
-        grid-template-areas:
-            "Intro"
-            "Links"
-            "News"
-            "Calend"
-            "SliderBanner";
-        
-        
+    @media screen and (max-width:1400px) {
+        .gridConteudodoSite{
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr ;
+        max-width: 100%;
+        }
         .retLinks{
-            width: 100%;
+            width: 17vw;
+            max-width: 100%;
         }
-        .retText{
-            width: 120%;
-            height: 30vh;
-        }
-        .textinhos{
-            font-size: 2.5vw;
-        }
-        .w-100{
-            font-size: 3vw;
-        }
-        .h-100{
-            font-size:3vh;
+        .menuCalend{
+            width: 17vw;
         }
     }
+
 }
 
 .menuCalend{
     grid-area: Calend;
     background-color:#2d282f;
     height: 97vh;
+    width: 73%;
 }
+
+.colunaCalend{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    max-height: 100%;
+    width: 15vw;
+}
+.containerCalend{
+    display: flex;
+    flex-direction: column;
+    background-color:#423745;
+    height: 30vh;
+    margin-top: 5%;
+    margin-right: 5%;
+    border-radius: 15px;
+    
+}
+body.home .calendText{
+    color: #ffffff;
+    margin-left: 9%;
+    margin-top: 6%;
+    font-family: 'MorandiRegular', sans-serif;
+    margin-right: 9%;
+    overflow-y: auto;
+
+}
+
+body.home .h5calend{
+    margin-left: 9%;
+    border-bottom: 2px solid #dab2f9;
+    font-family: 'MorandiRegular', sans-serif;
+    width: 75%;
+    font-weight: bolder;
+    font-size:1vw;
+}
+
 .menuNews{
     grid-area: News;
     background-color:#2d282f;
     height: 100vh;
 }
 
+body.home .UPD{
+    color:#ffdb70;
+    background-color:#232024;
+    border-radius: 10px;
+    margin-top: 22%;
+    margin-left: 70%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    font-weight: bolder;
+    text-align: center;
+}
+
+body.home .UPDNEW{
+    color:#ff6060;
+    background-color:#232024;
+    border-radius: 10px;
+    margin-top: 22%;
+    margin-left: 70%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
 .retLinks{
     grid-area: Links;
     background-color:#2d282f;
-    height: 30vh;
+    max-width: 100%;
+    width: 73%;
 }
 
 .retText{
     grid-area: Intro;
     background-color:#2d282f;
-    height: 30vh;
 }    
 
 .menuBanners{
@@ -110,6 +237,7 @@ body {
 .colunaNews{
     display: flex!important;
     flex-direction: column!important;
+    
 }
 
 .menuHeader{
@@ -132,7 +260,7 @@ title {
 
 h1 {
     font-family: 'MorandiRegular', sans-serif;
-    font-size: 44.5px;
+    font-size: 2.35vw;
     font-weight: lighter;
 }
 
@@ -178,7 +306,7 @@ h3 {
 }
 
 .h-100{
-    height: inherit;
+    
 }
 
 .py-4{
@@ -189,7 +317,7 @@ h3 {
 body.home h1, body.home h2, body.home h3, body.home h4{
     color: #FFF;
     display: table;
-    border-bottom: 4px solid #dab2f9;
+    border-bottom: 2px solid #dab2f9;
     font-family: 'MorandiRegular', sans-serif;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -202,10 +330,10 @@ body.home .gridConteudodoSite>div{
 
 body.home .cartasNovas{
     background: #423745;
-    color: #FFF;
     margin-top: 1.5rem!important;
     border-radius: 15px;
     height: 20vh;
+    max-width: 100%;
 }
 
 body.home .imagemCartasNovas{
@@ -218,8 +346,8 @@ body.home .imagemCartasNovas{
 body.home .imagemTextoCartas{
     display: flex!important;
     flex-direction: column!important;
-    text-align: left;
     padding: 5px;
+    max-height: 100%;
 }
 
 .container{
@@ -230,7 +358,7 @@ body.home .imagemTextoCartas{
 .p-2d-flex{
     padding: 0.5rem;
     display: flex;
-    width: 45%;
+    width: 50%;
 }
 
 h5 {
@@ -239,4 +367,66 @@ h5 {
     color: #FFF;
     margin-bottom: 0px;
     font-family: 'MorandiRegular', sans-serif;
+    font-weight: lighter;
+}
+
+.containerLinks{
+    margin-top: 8%;
+}
+
+.colunaLinks{
+    display: flex;
+    flex-direction: column;
+}
+
+body.home .botoesNovos{
+    display: flex;
+    background: #423745;
+    height: 3.5vh;
+    border-radius: 5px;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+body.home .textoLinks{
+    text-align: left;
+    color: #ffffff;
+    display:flex;
+    flex-direction: column;
+    margin-left: 6%;
+    justify-content: center;
+}
+
+h6{
+    margin: 0px;
+    font-weight: lighter;
+    font-family: 'MorandiRegular', sans-serif;
+    font-size: 0.8vw;
+}
+
+a:link {
+    color: #ffffff; /* Cor do texto para links não visitados */
+    text-decoration: none;
+}
+
+.headSite{
+    background-color:#2d282f;
+    height: 5.556vh;
+    max-width: 100%;
+}
+
+.containerHeader{
+    margin-right: 15%;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.logoStyle{
+    max-width: 40%;
+
 }
